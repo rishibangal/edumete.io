@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+   body {
+    font-family: cursive;
+   }
+   a {
+    text-decoration: none;
+   }
+   li {
+    list-style: none;
+   }
+   .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    font-family: 'Exo', sans-serif;
+    background-color: rgba(0, 0, 0, 0.301);
+   }
+   .nav-links a {
+    color: #fff;
+   }
+   /* LOGO */
+   .logo {
+    font-size: 42px;
+    font-family: 'Exo', sans-serif;
+    margin-right: 40px;
+   }
+   /* NAVBAR MENU */
+   .menu {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
+   }
+   .menu li:hover{
+    background-color: #ffffff54;
+    border-radius: 5px;
+    transition: 0.3s ease;
+   }
+   .menu li {
+    padding: 5px 14px;
+    margin-right: 12px;
+   }
+   /* DROPDOWN MENU */
+   .services {
+    position: relative; 
+   }
+   .dropdown {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 1em 0;
+    position: absolute; /*WITH RESPECT TO PARENT*/
+    display: none;
+    border-radius: 8px;
+    top: 35px;
+    width: 1000px;
+   }
+   .dropdown li + li {
+    margin-top: 10px;
+   }
+   .dropdown li {
+    padding: 0.5em 1em;
+    width: 8em;
+    text-align: center;
+    transition: width 2s, height 2s, transform 2s;
+    margin-top: 40px;
+   }
+   .dropdown li:hover {
+    background: rgba(255, 255, 255, 0.377);
+
+   }
+   .services:hover .dropdown {
+    display: block;
+   }
+   /*RESPONSIVE NAVBAR MENU STARTS*/
+/* CHECKBOX HACK */
+input[type=checkbox]{
+    display: none;
+   } 
+   /*HAMBURGER MENU*/
+   .hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+   }
+   /* APPLYING MEDIA QUERIES */
+   @media (max-width: 790px) {
+   .menu { 
+    display:none;
+    position: absolute;
+    background: rgb(189, 31, 31);
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+    opacity: 70%;
+    box-shadow: 3px 3px black;
+   }
+   .menu li:hover {
+    display: inline-block;
+    background-color:#4c9e9e;
+    transition: 0.3s ease;
+   }
+   .menu li + li {
+    margin-top: 12px;
+   }
+   input[type=checkbox]:checked ~ .menu{
+    display: block;
+   }
+   .hamburger {
+    display: block;
+   }
+   .dropdown {
+    left: 50%;
+    top: 30px;
+    transform: translateX(35%);
+   }
+   .dropdown li:hover {
+    background-color: #04ff2d44;
+   }
+   }
+   .simage{
+       width: 20px;
+       height: 20px;
+       margin-right: 3px;
+   }
+   body {
+    margin: 0;
+    overflow: hidden;
+  }
+
+  
+  @keyframes animateSprite {
+    0% {
+      background-position: -600px; /* Starting position moving left sprite */
+    }
+    20% {
+      background-position: 0px; /* Straight on sprite */
+    }
+    25% {
+      background-position: -200px; /* Moving up sprite */
+    }
+    35% {
+      background-position: -400px; /* Moving right sprite */
+    }
+    40% {
+      background-position: -400px;
+    }
+    50% {
+      background-position: -200px;  /* Moving up sprite */
+    }
+    60% {
+      background-position: -0px; /* Straight on sprite */
+    }
+    67% {
+      background-position: -600px; /* Moving up sprite */
+    }
+  
+    100% {
+      background-position: -600px;
+    }
+  }
+  
+  @keyframes swim {
+    0% {
+      transform: translate(0, 0); /* Starting position */
+    }
+    20% {
+      transform: translate(calc(-50vw - 100px), 0); /* Animate to center of screen */
+    }
+    25% {
+      transform: translate(calc(-50vw - 100px), 0); /* Stay at the center for 1 second */
+    }
+    35% {
+      transform: translate(calc(-50vw - 100px), -20vh); /* Animate up for 2 seconds */
+    }
+    50% {
+      transform: translate(-25vw, 15vh); /* Animate bottom right for 3 seconds */
+    }
+    60% {
+      transform: translate(-25vw, -20vh); /* Animate up at right of the screen */
+    }
+    67% {
+      transform: translate(-25vw, -20vh);
+    }
+  
+    100% {
+      transform: translate(calc(-100vw - 300px), 0); /* Animate past left past the screen */
+    }
+  }
+  .ocean {
+    position: relative;
+    width: 100vw;
+    height: 88px;
+
+  }
+  
+  .bubble {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    position: absolute;
+    background-color: white;
+    bottom: -20px;
+    opacity: 0.2;
+    animation: bubble 15s ease-in-out infinite,
+      sideWays 4s ease-in-out infinite alternate;
+      opacity: 0%;
+  }
+  
+  @keyframes bubble {
+    0% {
+      transform: translateY(0%);
+      opacity: 0.06;
+    }
+    100% {
+      transform: translateY(-120vh);
+    }
+  }
+  
+  @keyframes sideWays {
+    0% {
+      margin-left: 0px;
+    }
+    100% {
+      margin-left: 200px;
+    }
+  }
+  
+  .bubble--1 {
+    left: 10%;
+    animation-delay: 0.5s;
+    animation-duration: 16s;
+    opacity: 0.2;
+  }
+  
+  .bubble--2 {
+    width: 15px;
+    height: 15px;
+    left: 40%;
+    animation-delay: 1s;
+    animation-duration: 10s;
+    opacity: 0.1;
+  }
+  
+  .bubble--3 {
+    width: 10px;
+    height: 10px;
+    left: 30%;
+    animation-delay: 5s;
+    animation-duration: 20s;
+    opacity: 0.3;
+  }
+  
+  .bubble--4 {
+    width: 25px;
+    height: 25px;
+    left: 40%;
+    animation-delay: 8s;
+    animation-duration: 17s;
+    opacity: 0.2;
+  }
+  
+  .bubble--5 {
+    width: 30px;
+    height: 30px;
+    left: 60%;
+    animation-delay: 10s;
+    animation-duration: 15s;
+    opacity: 0.1;
+  }
+  
+  .bubble--6 {
+    width: 10px;
+    height: 10px;
+    left: 80%;
+    animation-delay: 3s;
+    animation-duration: 30s;
+    opacity: 0.4;
+  }
+  
+  .bubble--7 {
+    width: 15px;
+    height: 15px;
+    left: 90%;
+    animation-delay: -7s;
+    animation-duration: 25s;
+    opacity: 0.3;
+  }
+  
+  .bubble--9 {
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    bottom: 30px;
+    animation-delay: -5s;
+    animation-duration: 19s;
+    opacity: 0.2;
+  }
+  
+  .bubble--10 {
+    width: 40px;
+    height: 40px;
+    left: 30%;
+    bottom: 30px;
+    animation-delay: -21s;
+    animation-duration: 16s;
+    opacity: 1;
+  }
+  
+  .bubble--11 {
+    width: 30px;
+    height: 30px;
+    left: 60%;
+    bottom: 30px;
+    animation-delay: -13.75s;
+    animation-duration: 20s;
+    opacity: 0.3;
+  }
+  
+  .bubble--11 {
+    width: 25px;
+    height: 25px;
+    left: 90%;
+    bottom: 30px;
+    animation-delay: -10.5s;
+    animation-duration: 19s;
+    opacity: 0.3;
+  }
+  html, body {
+    width: 100%;
+    height:100%;
+    
+  }
+  
+
+  
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+  body {
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+    display: -webkit-box;
+    display: flex;
+    }
+    
+    /* Here using -webkit, we make angle
+    of 45 degree of falling star */
+    .sky {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+    }
+    
+    /* Here we are making roundabout balls */
+    .star {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 2px;
+    border-radius: 885px;
+    background: linear-gradient(-45deg,
+        #eef0f5, rgba(0, 0, 255, 0));
+    
+    -webkit-filter: drop-shadow(0 0 6px #eef1f8);
+    filter: drop-shadow(0 0 6px #d7dff0);
+    -webkit-animation: tail 3000ms ease-in-out infinite,
+        shooting 3000ms ease-in-out infinite;
+    animation: tail 3000ms ease-in-out infinite,
+        shooting 3000ms ease-in-out infinite;
+    }
+    
+    /* Here we add before and after effect to star */
+    .star::before,
+    .star::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+        -45deg,
+        rgba(0, 0, 255, 0),
+        #eaeef8,
+        rgba(0, 0, 255, 0)
+    );
+    -webkit-transform: translateX(50%) rotateZ(45deg);
+    transform: translateX(50%) rotateZ(45deg);
+    border-radius: 100%;
+    -webkit-animation: shining 3000ms ease-in-out infinite;
+    animation: shining 3000ms ease-in-out infinite;
+    }
+    .star::after {
+    -webkit-transform: translateX(50%) rotateZ(-45deg);
+    transform: translateX(50%) rotateZ(-45deg);
+    }
+    
+    /* Here we are adding location of each
+    nth-child, animations, delays, and
+    before and after effects to each
+    and every balls(stars) */
+    .star:nth-child(1) {
+    top: calc(50% - -119px);
+    left: calc(50% - 43px);
+    -webkit-animation-delay: 4000ms;
+    animation-delay: 4000ms;
+    }
+    .star:nth-child(1)::before,
+    .star:nth-child(1)::after {
+    -webkit-animation-delay: 4000ms;
+    animation-delay: 4000ms;
+    }
+    .star:nth-child(2) {
+    top: calc(50% - -43px);
+    left: calc(50% - 37px);
+    -webkit-animation-delay: 5000ms;
+    animation-delay: 5000ms;
+    }
+    .star:nth-child(2)::before,
+    .star:nth-child(2)::after {
+    -webkit-animation-delay: 5000ms;
+    animation-delay: 5000ms;
+    }
+    .star:nth-child(3) {
+    top: calc(50% - -40px);
+    left: calc(50% - 222px);
+    -webkit-animation-delay: 7000ms;
+    animation-delay: 7000ms;
+    }
+    .star:nth-child(3)::before,
+    .star:nth-child(3)::after {
+    -webkit-animation-delay: 7000ms;
+    animation-delay: 7000ms;
+    }
+    .star:nth-child(4) {
+    top: calc(50% - -29px);
+    left: calc(50% - 113px);
+    -webkit-animation-delay: 7000ms;
+    animation-delay: 7000ms;
+    }
+    .star:nth-child(4)::before,
+    .star:nth-child(4)::after {
+    -webkit-animation-delay: 7000ms;
+    animation-delay: 7000ms;
+    }
+    .star:nth-child(5) {
+    top: calc(50% - 146px);
+    left: calc(50% - 112px);
+    -webkit-animation-delay: 3000ms;
+    animation-delay: 3000ms;
+    }
+    .star:nth-child(5)::before,
+    .star:nth-child(5)::after {
+    -webkit-animation-delay: 3000ms;
+    animation-delay: 3000ms;
+    }
+    .star:nth-child(6) {
+    top: calc(50% - -108px);
+    left: calc(50% - 160px);
+    -webkit-animation-delay: 3000ms;
+    animation-delay: 3000ms;
+    }
+    .star:nth-child(6)::before,
+    .star:nth-child(6)::after {
+    -webkit-animation-delay: 3000ms;
+    animation-delay: 3000ms;
+    }
+    .star:nth-child(7) {
+    top: calc(50% - 52px);
+    left: calc(50% - 72px);
+    -webkit-animation-delay: 7000ms;
+    animation-delay: 7000ms;
+    }
+    .star:nth-child(7)::before,
+    .star:nth-child(7)::after {
+    -webkit-animation-delay: 7000ms;
+    animation-delay: 7000ms;
+    }
+    
+    /* This code will help to generate
+    effect in tail of star */
+    @keyframes tail {
+    0% {
+        width: 0;
+    }
+    30% {
+        width: 100px;
+    }
+    100% {
+        width: 0;
+    }
+    }
+    
+    /* This code will generate shining
+    effect in head of star */
+    @keyframes shining {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 30px;
+    }
+    100% {
+        width: 0;
+    }
+    }
+    
+    /* Here we are adding webkit-animation
+    to head of star for shining */
+    @-webkit-keyframes shining {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 30px;
+    }
+    100% {
+        width: 0;
+    }
+    }
+    
+    /* Here we are adding webkit-animation
+    to tail of star */
+    @-webkit-keyframes tail {
+    0% {
+        width: 0;
+    }
+    30% {
+        width: 100px;
+    }
+    100% {
+        width: 0;
+    }
+    }
+    
+    /* Here we are adding webkit-animation
+    for shooting effect */
+    @-webkit-keyframes shooting {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(270px);
+        transform: translateX(270px);
+    }
+    }
+    
+    /* Here we make shooting effect */
+    @keyframes shooting {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(270px);
+        transform: translateX(270px);
+    }
+    }
+    
